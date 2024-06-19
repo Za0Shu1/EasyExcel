@@ -21,6 +21,8 @@ public class EasyExcel : ModuleRules
 			// Ensure that the DLL is staged along with the executable
 			RuntimeDependencies.Add("$(BinaryOutputDir)/libxl.dll",
 				"$(ModuleDir)/ThirdParty/libxl-win-4.2.0/bin/libxl.dll");
+			
+			RuntimeDependencies.Add(Path.Combine("$(PluginDir)", "xls", "..."),StagedFileType.NonUFS);
 		}
 
 		PublicIncludePaths.Add(Path.Combine(ModuleDirectory, "ThirdParty", "libxl-win-4.2.0", "include"));
